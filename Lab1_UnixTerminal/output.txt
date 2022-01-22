@@ -2,3 +2,33 @@
 -bash-4.2$ ls
 Assignment1_GuessingGame  Lab1_UnixTerminal  Supplements      docs                       token2_late_day_extension
 Cheatsheets               README.md          VirtualMachines  token1_late_day_extension  token3_late_day_extension
+-bash-4.2$ cd monorepo-ZetaL0519                                                                                        
+-bash-4.2$ ls                                                                                                           
+Assignment1_GuessingGame  Lab1_UnixTerminal  Supplements      docs                       token2_late_day_extension      Cheatsheets               README.md          VirtualMachines  token1_late_day_extension  token3_late_day_extension      -bash-4.2$ cd Lab1_UnixTerminal                                                                                         
+-bash-4.2$ ls                                                                                                           
+ExternalResources  README.md  images  main  main.c  output.txt  part0.md  part1.md  part2.md  part3.md  part4.md        
+-bash-4.2$ man                                                                                                          
+man: can't set the locale; make sure $LC_* and $LANG are correct                                                        
+What manual page do you want?                                                                                           
+-bash-4.2$ man cp                                                                                                       
+man: can't set the locale; make sure $LC_* and $LANG are correct                                                        
+-bash-4.2$ sort output.txt                                                                                              
+# Simply copy and paste the output from your terminal here!                                                             
+-bash-4.2$ ls                                                                                                           
+Assignment1_GuessingGame  Lab1_UnixTerminal  Supplements  docs token2_late_day_extension  Cheatsheets README.md VirtualMachines  token1_late_day_extension  token3_late_day_extension      
+-bash-4.2$ rmdir                                                                                                        
+rmdir: missing operand                                                                                                  
+Try 'rmdir --help' for more information.                                                                                
+-bash-4.2$ rmdir --help                                                                                                 
+Usage: rmdir [OPTION]... DIRECTORY...                                                                                   
+Remove the DIRECTORY(ies), if they are empty.                                                                                                                                                                                                         
+--ignore-fail-on-non-empty                                                                                                          
+ignore each failure that is solely because a directory is non-empty                                                                                          
+-p, --parents   remove DIRECTORY and its ancestors; e.g., 'rmdir -p a/b/c' is                                                             
+similar to 'rmdir a/b/c a/b a'               
+-v, --verbose   output a diagnostic for every directory processed                                                           
+--help     display this help and exit                                                                                   
+--version  output version information and exit                                                                                                                                                                                            
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>                                                     
+Report rmdir translation bugs to <http://translationproject.org/team/>                                                  
+For complete documentation, run: info coreutils 'rmdir invocation'  
