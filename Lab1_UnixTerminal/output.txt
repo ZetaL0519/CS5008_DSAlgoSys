@@ -1,2 +1,4 @@
 # Simply copy and paste the output from your terminal here!
-i
+-bash-4.2$ ls
+Assignment1_GuessingGame  Lab1_UnixTerminal  Supplements      docs                       token2_late_day_extension
+Cheatsheets               README.md          VirtualMachines  token1_late_day_extension  token3_late_day_extension
