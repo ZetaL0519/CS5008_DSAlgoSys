@@ -1,7 +1,7 @@
 # Monorepo
 
 - [Siyue Li]
-- ['si:ju: li:] *[Phonetic spelling](https://dictionary.cambridge.org/us/help/phonetics.html) of your name here* **(TODO: Change this)**
+- ['si:ju: li:] *[Phonetic spelling](https://dictionary.cambridge.org/us/help/phonetics.html) of your name here* 
 
 ## Important Documents 
 
