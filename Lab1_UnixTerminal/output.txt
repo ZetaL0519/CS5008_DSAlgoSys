@@ -31,4 +31,8 @@ similar to 'rmdir a/b/c a/b a'
 --version  output version information and exit                                                                                                                                                                                            
 GNU coreutils online help: <http://www.gnu.org/software/coreutils/>                                                     
 Report rmdir translation bugs to <http://translationproject.org/team/>                                                  
+<<<<<<< HEAD
 For complete documentation, run: info coreutils 'rmdir invocation'  
+=======
+For complete documentation, run: info coreutils 'rmdir invocation'  
+>>>>>>> 3f47c5e7c1c4526cd4832c5036008f26ae5e9e0a
