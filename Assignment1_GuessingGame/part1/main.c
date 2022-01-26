@@ -38,8 +38,9 @@ int processguess(){
 }
 
 int main(){
-
-    for (int i = 0; i < 5; i ++){
+    
+    int i, j;
+    for (i = 0; i < 5; i ++){
         printf("============================\n");
         printf("CPU Says: Pick a number 1-10\n"); 
         printf("============================\n");
@@ -50,7 +51,7 @@ int main(){
     printf("Here are the results of your guessing abilities\n"); 
     printf("=============================================\n");
 
-    for (int i = 0; i < 5; i ++){
+    for (j = 0; i < 5; i ++){
         printf("Game %d took you %d guesses\n", i, count[i]);
     }
     
