@@ -51,8 +51,9 @@ int main(){
     printf("Here are the results of your guessing abilities\n"); 
     printf("=============================================\n");
 
-    for (j = 0; i < 5; i ++){
-        printf("Game %d took you %d guesses\n", i, count[i]);
+    for (j = 0; j < 5; j ++){
+        printf("Game %d took you %d guesses\n", j, count[j]);
+
     }
     
     return 0;
