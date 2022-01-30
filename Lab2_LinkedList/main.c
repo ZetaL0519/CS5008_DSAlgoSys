@@ -38,6 +38,29 @@ void unitTest3(){
     FreeLinkedList(myList);
 }
 
+/* Create a linked list with more than 10 elements*/
+void unitTest4(){
+    // Create an empty list
+    linkedlist_t* myList = CreateLinkedList();
+    // Append more than 10 elements to the list
+    AppendToLinkedList(myList, 3);
+    AppendToLinkedList(myList, 4);
+    AppendToLinkedList(myList, 5);
+    AppendToLinkedList(myList, 6);
+    AppendToLinkedList(myList, 7);
+    AppendToLinkedList(myList, 8);
+    AppendToLinkedList(myList, 9);
+    AppendToLinkedList(myList, 10);
+    AppendToLinkedList(myList, 11);
+    AppendToLinkedList(myList, 12);
+    AppendToLinkedList(myList, 13);
+    AppendToLinkedList(myList, 14);
+    // Print the list
+    PrintLinkedList(myList);
+    // Free the 'heap' memory
+    FreeLinkedList(myList);
+}
+
 int main(){
   
     // Call our unit Test. A unit test is a test that
@@ -48,6 +71,7 @@ int main(){
     unitTest2();
     // Call another unit test
     unitTest3();
- 
+    // Call another unit test
+    unitTest4();
     return 0;
 }
