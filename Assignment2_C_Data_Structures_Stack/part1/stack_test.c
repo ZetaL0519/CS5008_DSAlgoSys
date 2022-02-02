@@ -3,9 +3,9 @@
 //       Adding more tests and slowly making them more and more complicated
 //       as you develop your library is recommended.
 //
-// Compile this assignment with: gcc -g -Wall stack_test.c -o stack_test
+// Compile this assignment with: gcc -g -Wall stack_test.c stack_t.c -o prog
 //
-// Run with: ./stack_test
+// Run with: ./prog
 //
 // This is a way to test your code.
 //
@@ -43,7 +43,7 @@ int unitTest1(int status){
     return passed;
 }
 
-// Enqueu several items into a stack and test the size
+// Enqueue several items into a stack and test the size
 int unitTest2(int status){
     int passed = 0;
     
@@ -117,14 +117,14 @@ int unitTest4(int status){
     return passed;
 }
 
-// Simple enqueu and deque stack test
-// Also confirms that a stack is full
+// Simple enqueue and dequeue stack test
+// Also confirms that a stack is empty
 int unitTest5(int status){
     int passed = 0;
     
     stack_t* test_s = create_stack(MAX_DEPTH);
     stack_enqueue(test_s,1);
-    if(1==stack_full(test_s)){
+    if(0==stack_full(test_s)){
         passed = 1;
     }else{
         free_stack(test_s);
@@ -132,7 +132,7 @@ int unitTest5(int status){
     }
     
     stack_dequeue(test_s);
-    if(0==stack_full(test_s)){
+    if(1==stack_empty(test_s)){
         passed = 1;
     }else{
         passed = 0;
@@ -143,6 +143,145 @@ int unitTest5(int status){
     return passed;
 }
 
+// Enqueue over the capacity and ensure stack still reported as full
+// Enqueing past the MAX_DEPTH, is a logical error on the programmers part,
+// but should not crash the program. Nodes enqueued past the MAX_DEPTH for example
+// SHOULD be ignored, such that at maximum, the stack_t only ever includes MAX_DEPTH items at most.
+int unitTest6(int status){
+    int passed = 0;
+    
+    stack_t* test_s = create_stack(MAX_DEPTH);
+
+    int i =0;
+    for(i=0; i < 60; i++){
+       stack_enqueue(test_s,1);
+    }
+
+    if(1==stack_full(test_s)){
+        passed = 1;
+    }else{
+        passed = 0;
+    }
+       
+    free_stack(test_s);    
+
+    return passed;
+}
+
+// Enqueue over the capacity
+// Remove item, and ensure stack is not full
+// Nodes enqueued that are greater than MAX_DEPTH are not to be
+// added to the stack_t.
+int unitTest7(int status){
+    int passed = 0;
+    
+    stack_t* test_s = create_stack(MAX_DEPTH);
+
+    int i =0;
+    for(i=0; i < 60; i++){
+       stack_enqueue(test_s,1);
+    }
+
+    stack_dequeue(test_s);
+    if(0==stack_full(test_s)){
+        passed = 1;
+    }else{
+        passed = 0;
+    }
+       
+    free_stack(test_s);    
+
+    return passed;
+}
+
+// Check stack size
+int unitTest8(int status){
+    int passed = 0;
+    
+    stack_t* test_s = create_stack(MAX_DEPTH);
+
+    int i=0;
+    for(i=0; i < 10; i++){
+       stack_enqueue(test_s,1);
+    }
+
+    if(10==stack_size(test_s)){
+        passed = 1;
+    }else{
+        passed = 0;
+    }
+       
+    free_stack(test_s);    
+
+    return passed;
+}
+
+// Check stack size of 0 and confirm stack is reported as empty
+int unitTest9(int status){
+    int passed = 0;
+    
+    stack_t* test_s = create_stack(MAX_DEPTH);
+
+    if(0==stack_size(test_s) && 1==stack_empty(test_s)){
+        passed = 1;
+    }else{
+        passed = 0;
+    }
+       
+    free_stack(test_s);    
+
+    return passed;
+}
+
+// Test that stack is free'd and does not segfault.
+// You can run: valgrind ./prog
+// This will report if there are any blocks of memory not freed.
+int unitTest10(int status){
+    int passed = 0;
+    
+    stack_t* test_s = create_stack(MAX_DEPTH);
+    stack_enqueue(test_s,1);
+    stack_enqueue(test_s,2);
+    stack_enqueue(test_s,3);
+    
+    free_stack(test_s);
+
+    return passed;
+}
+
+// Enqueue several items into a stack and ensure stack is not empty
+int unitTest11(int status){
+    int passed = 0;
+    
+    stack_t* test_s = create_stack(MAX_DEPTH);
+    stack_enqueue(test_s,1);
+    stack_enqueue(test_s,2);
+    stack_enqueue(test_s,3);
+    
+    if(0==stack_empty(test_s)){
+        passed =1;
+    }
+
+    free_stack(test_s);
+
+    return passed;
+}
+
+// Ensure dequeue'd item equals the one enqueue'd
+int unitTest12(int status){
+    int passed = 0;
+    
+    stack_t* test_s = create_stack(MAX_DEPTH);
+    stack_enqueue(test_s,42);
+    
+    if(42==stack_dequeue(test_s)){
+        passed =1;
+    }
+
+    free_stack(test_s);
+
+    return passed;
+}
 
 // NOTE: 
 // If you would like to add additional 
@@ -157,6 +296,13 @@ int (*unitTests[])(int)={
     unitTest3,
     unitTest4,
     unitTest5,
+    unitTest6,
+    unitTest7,
+    unitTest8,
+    unitTest9,
+    unitTest10,
+    unitTest11,
+    unitTest12,
     NULL
 };
 
@@ -168,7 +314,7 @@ int main(){
     // List of Unit Tests to test your data structure
     int counter =0;
     while(unitTests[counter]!=NULL){
-	    printf("========unitTest %d========\n",counter);
+	    printf("========unitTest %d========\n",counter+1);
         if(1==unitTests[counter](1)){
 		    printf("passed test\n");
     		testsPassed++;	
