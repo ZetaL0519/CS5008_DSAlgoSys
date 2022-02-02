@@ -62,9 +62,14 @@ void FreeLinkedList(linkedlist_t* list){
         return;
     }
     // Iterate through all nodes and free each
+    node_t* next = node -> next;
     while(node != NULL){
         free(node);
-        node = node -> next;
+        node = next;
+
+        if (node != NULL) {
+            next = node -> next;
+        }
     }
     // Free the list space
     free(list);
