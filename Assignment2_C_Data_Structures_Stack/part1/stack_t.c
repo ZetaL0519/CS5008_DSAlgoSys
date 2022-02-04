@@ -1,5 +1,4 @@
-#include <stdlib.h>  // Include for malloc/free and NULL
-#include <stdio.h>
+#include <stdlib.h>  // Include for malloc/free and NULL>
 #include "stack_t.h" // Include our function declarations and data types
 
 
@@ -10,7 +9,6 @@ stack_t* create_stack(unsigned int capacity){
 	myStack ->capacity = capacity;
 	myStack ->head = NULL;
 	myStack -> count = 0;
-	printf("stack created ");
 	return myStack;
 }
 
@@ -44,8 +42,6 @@ int stack_enqueue(stack_t* s, int item){
 		node ->next = head;
 		s->head = node;
 		s ->count ++;
-		printf("%d", stack_size(s));
-		printf("enqueue s ");
 		return 0;
 	}
 
@@ -61,6 +57,7 @@ int stack_dequeue(stack_t* s){
 	node_t* head = s -> head;
 	headvalue = head ->data;
 	node_t* node = head -> next;
+	free(head);
 	s -> head = node;
 	s ->count --;
 	return headvalue;
@@ -70,7 +67,6 @@ int stack_dequeue(stack_t* s){
 unsigned int stack_size(stack_t* s){
 	unsigned int size;
 	size = s -> count;
-	printf("size is %d ", size);
 	return size;
 }
 
