@@ -4,8 +4,9 @@
 
 // Creates a stack
 stack_t* create_stack(unsigned int capacity){
-	// Modify the body of this function as needed.
-	stack_t* myStack = (stack_t*) malloc(sizeof(stack_t));	
+	// malloc space for stack
+	stack_t* myStack = (stack_t*) malloc(sizeof(stack_t));
+	// initialize all attibutes
 	myStack ->capacity = capacity;
 	myStack ->head = NULL;
 	myStack -> count = 0;
@@ -13,6 +14,8 @@ stack_t* create_stack(unsigned int capacity){
 }
 
 // Stack Empty
+// if size is not empty, return 0
+// else, return 1
 int stack_empty(stack_t* s){
 	int size;
 	size = s ->count;
@@ -23,6 +26,8 @@ int stack_empty(stack_t* s){
 }
 
 // Stack Full
+// if size is not full, return 0
+// else, return 1
 int stack_full(stack_t* s){
 	int max = s ->capacity;
 	if (stack_size(s) < max) {
@@ -37,6 +42,7 @@ int stack_enqueue(stack_t* s, int item){
 		return -1;
 	} else {
 		node_t* head = s -> head;
+		// create new node for new item
 		node_t* node = (node_t*)malloc(sizeof(node_t));
 		node ->data = item;
 		node ->next = head;
@@ -44,18 +50,17 @@ int stack_enqueue(stack_t* s, int item){
 		s ->count ++;
 		return 0;
 	}
-
-// Note: you should have two return statements in this function.
 }
 
 // Dequeue an item
+// if empty, exit
 int stack_dequeue(stack_t* s){
 	if (stack_empty(s)){
 		exit(1);
 	}
 	int headvalue;
 	node_t* head = s -> head;
-	headvalue = head ->data;
+	headvalue = head -> data;
 	node_t* node = head -> next;
 	free(head);
 	s -> head = node;
