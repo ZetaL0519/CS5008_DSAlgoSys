@@ -86,7 +86,10 @@ The C programming language has a 'goto' command, search how to use it if you hav
 
 ### Response/Observations
 
-*Write here what kind of jmp statement is inserted*
+jne     .L3     (Conditional)It jumps to the specified location if the Zero Flag (ZF) is cleared (0). Common after cmp.
+jmp     .L4     It is an unconditional jump.
+jle     .L4     (Conditional)It performs a signed comparison jump after a cmp if the destination operand is less than or equal to the source operand.
+
 
 ## Compiler generated assembly 6 - For-loops
 - Write a C program using a for-loop that counts to 5.
