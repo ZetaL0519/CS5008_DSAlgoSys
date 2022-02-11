@@ -99,8 +99,9 @@ jle     .L4     (Conditional)It performs a signed comparison jump after a cmp if
 - Observe where the code goes for the condition statement (at the start or at the end?).
 
 ### Response/Observations
-
-*Write here a note about where the code goes for the condition statement.*
+At the start of the statement.
+        cmp     DWORD PTR [rbp-4], 5
+        jle     .L3
 
 ## Compiler generated assembly 7 - Switch Statements
 
@@ -113,6 +114,8 @@ jle     .L4     (Conditional)It performs a signed comparison jump after a cmp if
 ### Response/Observations
 
 *Write here your observations with a switch statement*
+
+The switch statement generates many comparisons and conditional jump instructions. I don't think it is optimal.
 
 ## Compiler generated assembly 8 - Add Function
 
