@@ -23,7 +23,8 @@ void CreateStudent(student_t* s, int grade, char* nameID){
 float ComputeAverageGrade(student_t* class, int sizeOfClass){
     assert(sizeOfClass > 0 && "Must have at least 1 student");
     float total=0.0f;
-    for(int i=0; i <= 5; i++){
+    int i;
+    for(i=0; i < 5; i++){
         total+= class[i].grade;
     }
     return total / sizeOfClass;
@@ -33,8 +34,8 @@ int main(){
 
     // Create our classroom of 5 students
     student_t* class = (student_t*)malloc(sizeof(student_t)*5);
-
-    for(int i=0; i <5 ; i++){
+    int i;
+    for(i=0; i <5 ; i++){
         // Assume all nameID's are "temporary"
         CreateStudent(&class[i],90,"temporary");
     }
@@ -42,13 +43,14 @@ int main(){
     // Storage for students grades
     float averageGrade = ComputeAverageGrade(class,5);
     printf("Class Average = %f\n\n",averageGrade);
-
     // Manually check our work
-    for(int i=0; i <=5 ; i++){
-        printf("Student %d\n",i);
-        printf("\tGrade: %d\n",class[i].grade);
-        printf("\tID   : %s\n",class[i].nameID);
+    int j;
+    for (j=0; j <5 ; j++){
+        printf("Student %d\n",j);
+        printf("\tGrade: %d\n",class[j].grade);
+        printf("\tID   : %s\n",class[j].nameID);
     }
-
+    
+    free(class);
     return 0;
 }
