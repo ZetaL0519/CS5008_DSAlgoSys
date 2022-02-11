@@ -130,6 +130,9 @@ The switch statement generates many comparisons and conditional jump instruction
 ### Response/Observations
 
 *Write here where popq is called*
+After the return statement.
+1. in function add(), aftern return;
+2. In main(), after return.
 
 # More resources to help
 
