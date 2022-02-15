@@ -26,7 +26,7 @@ main:
 					# in class.
 					# Ans: It transfers control to the operating system which then performs the requested service.
 	syscall				# Which syscall is being run?
-					# Ans: .text
+					# Ans: .text. It executes line 20-23, writing the string into the register.
 
 					# (4) What would another option be instead of 
 					# using a syscall to achieve this?
@@ -34,7 +34,9 @@ main:
 
 	movq	$60, %rax		# (5) We are again setting up another syscall
 	movq	$0, %rdi		# What command is it?
-					# Ans:	return 
+					# Ans:	syscall executes line 35-36 and returns.
+					# In line 35, it pushes in an exit function.
+					# In line 36, it sets first argument to 0.
 	syscall
 
 	popq %rbp			# (Note we do not really need
