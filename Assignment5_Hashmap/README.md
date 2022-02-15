@@ -1,13 +1,13 @@
 # TODO Please edit the following information in your assignment
 
-- Name: Siyue Li
-- How many hours did it take you to complete this assignment? 3
-- Did you collaborate with any other students/TAs/Professors? No.
+- Name:
+- How many hours did it take you to complete this assignment?
+- Did you collaborate with any other students/TAs/Professors?
 - Did you use any external resources? (Cite them below)
-  - https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
-  - https://www.cplusplus.com/reference/cstring/strstr/
-- (Optional) What was your favorite part of the assignment? *edit me*
-- (Optional) How would you improve the assignment? *edit me*
+  - tbd
+  - tbd
+- (Optional) What was your favorite part of the assignment?
+- (Optional) How would you improve the assignment?
 
 # Logistics
 
@@ -15,7 +15,7 @@ For this assignment (and every assignment/lab), you must login into the servers 
 
 # Part(s) to this assignment!
 
-See the folders [part1](./part1/) for this assignment.
+See the folder [part1](./part1/) and [part2](./part2/) for this assignment.
 
 # Rubric
 
@@ -25,17 +25,16 @@ See the folders [part1](./part1/) for this assignment.
       <th>Points</th>
       <th align="center">Description</th>
     </tr>
-    <tr>
-      <td>20% Program Style</td>
-      <td align="left"><ul><li>Was your program nicely indented?</li><li>Did you have variable names that are properly named?</li><li>Are your variables in the appropriate scope (i.e. not all globally accessible)</li></ul></td>
-    </tr>
      <tr>
-      <td>80% for Program Correctness</td>
-       <td align="left"><ul><li>Report a summary of instructions</li><li>reports the correct number of instructions</li><li>reports the correct number of cycles</li><li>Reads a file in correctly from the command-line arguments (and is not hardcoded)</li><li>No memory leaks</li><li>No files left open</li></ul></td>
+      <td>80% Correct implementation of hashmap</td>
+      <td align="left"><ul><li>All functions should be implemented. Do not rename the functions, but you may add any 'helper' functions if you deem necessary.<ul><li>(e.g. You might have a 'print_map' to help you debug)</li></ul></li></li><li>There should be no memory leaks<li>There should be no bugs in your functions</li><li>Your implementation will be graded by our set of unit tests, and we will check your code 'style' as well.</li></li></ul></td>
+    </tr>
+    <tr>
+      <td>20% Exercises</td>
+      <td align="left"><ul><li>Correct answers to the exercises in part 2</li></ul></td>
     </tr>
   </tbody>
 </table>
-
 
 ### Important notes
 
