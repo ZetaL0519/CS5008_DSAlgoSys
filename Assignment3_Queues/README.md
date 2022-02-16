@@ -1,12 +1,11 @@
 # TODO Please edit the following information in your assignment
 
-- Name:
-- How many hours did it take you to complete this assignment?
-- Did you collaborate with any other students/TAs/Professors?
+- Name: Siyue Li
+- How many hours did it take you to complete this assignment? 2 hours
+- Did you collaborate with any other students/TAs/Professors? No.
 - Did you use any external resources? (Cite them below)
-  - tbd
-  - tbd
-- (Optional) What was your favorite part of the assignment?
+No.
+- (Optional) What was your favorite part of the assignment? How to use an array to store the value and order of circular queue.
 - (Optional) How would you improve the assignment?
 
 # Logistics
