@@ -62,7 +62,9 @@ In swap function, parameters are stored as register mode but in main function, t
         mov     DWORD PTR [rbp-4], 0
         
         So offsets = 1560 + 1520 + 1480 + 80 + 8 + 4 = 4652.
-
+        Basically, the operating system assigns the base addresses. Element address = base address of the array + (offset number *number of bytes)
+        Offset = Element address - base address of the array.
+        
 ## Compiler generated assembly 4 - Dynamic Array 
 
 - Write a C program called array2.c that has an array of 400 integers in the function of main that is dynamically allocated.
