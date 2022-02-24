@@ -23,13 +23,12 @@ void CreateStudent(student_t* s, int grade, char* nameID){
 float ComputeAverageGrade(student_t* class, int sizeOfClass){
     assert(sizeOfClass > 0 && "Must have at least 1 student");
     float total=0.0f;
-<<<<<<< HEAD
+
     int i;
     for(i=0; i < 5; i++){
-=======
 
     for(int i=0; i < 5; i++){
->>>>>>> 8c28c2e439a2946cb0f767cd8206bbb39d5ba88d
+
         total+= class[i].grade;
     }
     return total / sizeOfClass;
@@ -49,7 +48,7 @@ int main(){
     float averageGrade = ComputeAverageGrade(class,5);
     printf("Class Average = %f\n\n",averageGrade);
     // Manually check our work
-<<<<<<< HEAD
+
     int j;
     for (j=0; j <5 ; j++){
         printf("Student %d\n",j);
@@ -57,7 +56,7 @@ int main(){
         printf("\tID   : %s\n",class[j].nameID);
     }
     
-=======
+
 
     for(int j=0; j <5 ; j++){
         printf("Student %d\n",j);
@@ -66,7 +65,7 @@ int main(){
         free(class[j].nameID);
     }
 
->>>>>>> 8c28c2e439a2946cb0f767cd8206bbb39d5ba88d
+
     free(class);
     return 0;
 }
