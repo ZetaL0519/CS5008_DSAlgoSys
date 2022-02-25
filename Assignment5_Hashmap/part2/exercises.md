@@ -9,9 +9,12 @@ Discuss and answer the following questions (Make sure to elaborate and justify y
 
 ## Answers:
 
-1. *edit your answer here for Part 2 question 1*
-2. *edit your answer here for Part 2 question 1*
-3. *edit your answer here for Part 2 question 1*
-4. *edit your answer here for Part 2 question 1*
+1. It is good to function but we are not getting constant time operations with hashmap.  We have to iterate through both bucket number of arraylists and the list to find the exact node.
+So the time complexity is O(n) rather than O(1)
+2. Instead of using chaining(linkedlist) to store elements in each bucket to avoid collisions, if the slot is taken, we can check the same position in the next bucket until an empty postion is found.
+If the position in each bucket is taken, try the next empty position in the bucket list.
+3. O(n) We have to go through each node to find them a new bucket.
+4. open addressing is a method for handling collisions. All elements are stored in the hash table, at any point, the size of the table must be greater than or equal to the total number of keys.
+It has at most one element per bucket.
 
 
