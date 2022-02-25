@@ -1,42 +1,43 @@
 	.file	"swap_long.c"
-	.text
-	.def	__main;	.scl	2;	.type	32;	.endef
-	.section .rdata,"dr"
+	.section	.rodata
 .LC0:
-	.ascii "%d\0"
+	.string	"%d"
 	.text
 	.globl	main
-	.def	main;	.scl	2;	.type	32;	.endef
-	.seh_proc	main
+	.type	main, @function
 main:
+.LFB2:
+	.cfi_startproc
 	pushq	%rbp
-	.seh_pushreg	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
 	movq	%rsp, %rbp
-	.seh_setframe	%rbp, 0
-	subq	$48, %rsp
-	.seh_stackalloc	48
-	.seh_endprologue
-	call	__main
-	movl	$1, -4(%rbp)
-	movl	$2, -8(%rbp)
-	movl	-4(%rbp), %eax
-	movl	%eax, -12(%rbp)
-	movl	-8(%rbp), %eax
-	movl	%eax, -4(%rbp)
-	movl	-12(%rbp), %eax
-	movl	%eax, -8(%rbp)
-	movl	-4(%rbp), %eax
-	movl	%eax, %edx
-	leaq	.LC0(%rip), %rcx
+	.cfi_def_cfa_register 6
+	subq	$32, %rsp
+	movq	$1, -8(%rbp)
+	movq	$2, -16(%rbp)
+	movq	-8(%rbp), %rax
+	movq	%rax, -24(%rbp)
+	movq	-16(%rbp), %rax
+	movq	%rax, -8(%rbp)
+	movq	-24(%rbp), %rax
+	movq	%rax, -16(%rbp)
+	movq	-8(%rbp), %rax
+	movq	%rax, %rsi
+	movl	$.LC0, %edi
+	movl	$0, %eax
 	call	printf
-	movl	-8(%rbp), %eax
-	movl	%eax, %edx
-	leaq	.LC0(%rip), %rcx
+	movq	-16(%rbp), %rax
+	movq	%rax, %rsi
+	movl	$.LC0, %edi
+	movl	$0, %eax
 	call	printf
 	movl	$1, %eax
-	addq	$48, %rsp
-	popq	%rbp
+	leave
+	.cfi_def_cfa 7, 8
 	ret
-	.seh_endproc
-	.ident	"GCC: (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 8.1.0"
-	.def	printf;	.scl	2;	.type	32;	.endef
+	.cfi_endproc
+.LFE2:
+	.size	main, .-main
+	.ident	"GCC: (GNU) 4.8.5 20150623 (Red Hat 4.8.5-44)"
+	.section	.note.GNU-stack,"",@progbits
