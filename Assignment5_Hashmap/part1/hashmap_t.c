@@ -24,7 +24,8 @@ hashmap_t* hashmap_create(unsigned int _buckets){
 	// Iterate through all of our buckets and set them to NULL
     map ->arrayOfLists = (node_t**)malloc(sizeof(node_t*)*_buckets);
 
-	for(int i=0; i < _buckets; i++){
+	int i;
+	for(i=0; i < _buckets; i++){
 		map->arrayOfLists[i] = NULL;
 	}
 	// Set our function pointer to a hashing function 
@@ -226,7 +227,8 @@ void hashmap_update(hashmap_t* _hashmap, char* key, char* newValue){
 //  - Iterate through every bucket and print out the keys
 // This function should run in O(n) time
 void hashmap_printKeys(hashmap_t* _hashmap){
-	for(int i=0; i < _hashmap->buckets; i++){
+	int i;
+	for(i=0; i < _hashmap->buckets; i++){
 		printf("Bucket# %d\n",i);
 		// Iterate through all of the lists
 		// starting at each bucket
