@@ -102,19 +102,25 @@ At a high level, implementing mini-shell takes the following components:
 -----------------------------------------------------
 NAME: 
 
-*edit me*
+Siyue Li
 
 SYNOPSIS: 
 
-*edit me and add in a short description of the command and its usage*
+History command. Print all the recent input the user has input.
 
 DESCRIPTION:
 
-*Write a longer description of what he command does*
+History command will show the recent 100 logs of input (valid or not) that the user inputs.
 
 NOTES:
 
-*Enter two or three sentences (minimum) in how you implemented the built-in command.*
+I used array as the data strucure to store all the past inputs. It can at most record 100 logs.
+
+1. add_hist function is called every time to store the input.
+2. an int (last) is kept for the number of inputs user has input so far. Its initial value is 0.
+So every time history command is called, the array would be iterated from index 0 to last - 1.
+The most recent log will be kept at index last - 1. This way, the most recent command will be at
+the end of the output.
 
 -----------------------------------------------------
 
