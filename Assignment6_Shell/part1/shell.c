@@ -9,6 +9,7 @@
 #define MAX_BUFFER_SIZE 80
 #define MAX_HIST_CMD 100
 
+// global variable to keep record of Commands.
 char* builtInCmd[] = {"cd","help","exit","history"};
 char* hisCmd[MAX_HIST_CMD];
 int last_hist = 0;
@@ -21,6 +22,7 @@ void sigint_handler(int sig){
 
 // cd command to change the directory.
 int cd_Cmd(char** args) {
+	// if cd has nothing after.
   	if (args[1] == NULL) {
 		fprintf(stderr, "Nothing after cd command \n");
 	}else{
@@ -44,6 +46,7 @@ void help_Cmd() {
 
 // add to history command array.
 void add_hist(char* line){
+	// won't add to the array if input logs over 100.
 	if (last_hist > MAX_HIST_CMD){
 		return;
 	}
@@ -75,6 +78,7 @@ int find_pipe(char** arg) {
 // put the tokens into the first command array.
 char** PrePipeCmd(char** arg) {
   	int index = find_pipe(arg); 
+	// store the array of strings for the first command
   	char** result = malloc(sizeof(char*) * MAX_BUFFER_SIZE); 
   	int i;
 
@@ -87,6 +91,7 @@ char** PrePipeCmd(char** arg) {
 // put the tokens into the second command array.
 char** PostPipeCmd(char** arg) {
  	int index = find_pipe(arg); 
+	// store the array of strings for the second command
   	char** result = malloc(sizeof(char*) * MAX_BUFFER_SIZE);
   	int i = index + 1;
   	int j = 0;
@@ -160,6 +165,7 @@ int runCmd(char** arg){
 char* getInput(){
 	char* line = malloc(MAX_BUFFER_SIZE * (sizeof(char)) + 1);
 	fgets(line, MAX_BUFFER_SIZE, stdin);
+	// remove last enter \n
 	line = strtok(line, "\n");
 	return line;
 }
@@ -168,7 +174,9 @@ char* getInput(){
 char** ProcessInput(char* line){
 	int i = 0;
 	char** array = malloc(MAX_BUFFER_SIZE * sizeof(char*));
+	// remove the space
 	char* arg = strtok(line, " \t");
+	// remove space of the input and put it into array.
 	while(arg){
 		array[i] = arg;
 		arg = strtok(NULL, " \t");
@@ -181,11 +189,13 @@ char** ProcessInput(char* line){
 // process different input
 void readCmd() {
 	char* line = getInput();
+	// if User enters nothing.
 	if (line == NULL) {
 		free(line);
 		return;
 	}
 	add_hist(line);
+	// in case line would change.
 	char* line_copy = strdup(line);
 	char** array = ProcessInput(line_copy);
 	char** arg1;
@@ -202,6 +212,7 @@ void readCmd() {
 		hist_Cmd();
 	} else {
     	int index = find_pipe(array);
+		// if | is found
     	if (index != -1) {
       		arg1 = PrePipeCmd(array);
       		arg2 = PostPipeCmd(array);
@@ -214,6 +225,7 @@ void readCmd() {
 	free(array);
 }
 
+// mian function to run the mini shell
 int main(){
   alarm(180); // Please leave in this line as the first statement in your program.
               // This will terminate your shell after 180 seconds,
