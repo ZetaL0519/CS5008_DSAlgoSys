@@ -52,12 +52,14 @@ int main() {
     printf("Artist starts at: %d\n", counter);
     srand(time(NULL));
     // create and execute multiple threads
-    for (int i = 0; i < NTHREADS; i ++){
+    int i = 0;
+    for (; i < NTHREADS; i ++){
         pthread_create(&tids[i], NULL, thread, NULL);
     }
-
-    for (int i = 0; i < NTHREADS; i ++) {
-        pthread_join(tids[i], NULL);
+	
+    int j = 0;
+    for (; j < NTHREADS; j ++) {
+        pthread_join(tids[j], NULL);
     }
 
     printf("parent is exiting(last artist out!)\n");
