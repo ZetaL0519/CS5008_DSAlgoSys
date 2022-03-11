@@ -1,4 +1,3 @@
-// Implement your part 1 solution here
 // gcc vfork.c -o vfork
 // this program spawns 8 child processes
 // print out all of the pids.
@@ -6,15 +5,17 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <time.h>
 
 int colors[64][64 * 3];
 
-// Modify your paint function here
 void paint(int workID){ 
 	printf("Artist %d is painting\n",workID);
+	// randomly choose a color
+	int ColorID = rand() % 255;
 	int i = 0;
 	for (; i < 64 * 3; i ++){
-		colors[workID][i] = workID;
+		colors[workID][i] = ColorID;
 	}
 }
 
@@ -40,29 +41,29 @@ int save(){
 
 int main(int argc, char** argv){
    	int* integers = malloc(sizeof(int)*8000);
-    	int numberOfArtists = 64; // How many child processes do we want?
-
-   	 pid_t pid;
+    int numberOfArtists = 64; // 64 child processes
+	srand(time(NULL));
+   	pid_t pid;
   
-    	// main loop where we fork new threads
-   	 int i = 0;
-   	 for(; i < numberOfArtists; i++){
-        	// (1) Perform a fork
-                pid = vfork();
+    // main loop where we fork new threads
+   	int i = 0;
+   	for(; i < numberOfArtists; i++){
+        // (1) Perform a fork
+        pid = vfork();
 		                
-                if (pid == -1){
-                    printf("Fork failed");
-                    exit(EXIT_FAILURE);
-                }
-
-                // (2) Make only the child do some work (i.e. paint) and then terminate.
-                if(pid== 0){
-			        //  make child paint
-                    paint(i);
-			        // Then terminate/exit child
-                    exit(0);
-		}
+        if (pid == -1){
+            printf("Fork failed");
+            exit(EXIT_FAILURE);
         }
+
+        // (2) Make only the child do some work (i.e. paint) and then terminate.
+        if(pid== 0){
+			 //  make child paint
+            paint(i);
+			// Then terminate/exit child
+            exit(0);
+		}
+    }
 	
 	pid_t wpid;
 	int status = 0;
