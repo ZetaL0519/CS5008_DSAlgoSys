@@ -207,8 +207,8 @@ int main(){
 		rookie->x = rand() % CANVAS_WIDTH-1;
         rookie->y = rand() % CANVAS_HEIGHT-1;
 		// colors are random but also unique among all different artists
-		rookie->r = rand() % 255;
-        rookie->g = 4 * i;
+		rookie->r = 4 * i;
+        rookie->g = rand() % 255;
         rookie->b = rand() % 255;
         pthread_t rookie_tid;
         moreArtists_tid[i] = rookie_tid;
@@ -238,8 +238,9 @@ int main(){
     free(Leonardo);
 
     // TODO: Free any other memory you can think of
-	for (int i=0; i < rookieArtists; i++){
-        free(rookies[i]);
+    int k;	
+    for (k=0; k < rookieArtists; k++){
+        free(rookies[k]);
     }
 	return 0;
 }
