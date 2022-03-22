@@ -161,7 +161,7 @@ This means you need to enforce some locking mechanism.
 
 **Discuss(in a few sentences)** how starvation may occur in the above program, and how you would possibly fix it? (You may fix it in your implementation if you like--the art may become more beautiful!)
 
-*edit and add your response here*
+Answer: Starvation may occur when 50 artists start collectively around the same location and the canvas is only painted on several spots instead of randomly across the place. I think the problem is the starting point of artists. we should make sure that the 50 artitsts start sparsely at different places across the canvas. Maybe the 50 artists can start around a large circle on the canvas.
 
 
 # Resources to help
