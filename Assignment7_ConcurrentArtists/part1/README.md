@@ -164,6 +164,8 @@ This means you need to enforce some locking mechanism.
 Answer: Starvation may occur when some of the 50 artist thread monopolize the locked section and the other threads have to wait indefinitely because of low priority. 
 In Priority Scheduling, Aging is used to increase the priority of all the processes in the ready queue at constant intervals of time so as to make sure that every process will ultimately reach top priority and execute.
 
+In this context, maybe we can start different artists in sparsely different locations so that the threads won't get locked.
+
 # Resources to help
 
 - Makefile tutorial: https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html
