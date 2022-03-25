@@ -161,8 +161,8 @@ This means you need to enforce some locking mechanism.
 
 **Discuss(in a few sentences)** how starvation may occur in the above program, and how you would possibly fix it? (You may fix it in your implementation if you like--the art may become more beautiful!)
 
-Answer: Starvation may occur when 50 artists start collectively around the same location and the canvas is only painted on several spots instead of randomly across the place. I think the problem is the starting point of artists. we should make sure that the 50 artitsts start sparsely at different places across the canvas. Maybe the 50 artists can start around a large circle on the canvas.
-
+Answer: Starvation may occur when some of the 50 artist thread monopolize the locked section and the other threads have to wait indefinitely because of low priority. 
+In Priority Scheduling, Aging is used to increase the priority of all the processes in the ready queue at constant intervals of time so as to make sure that every process will ultimately reach top priority and execute.
 
 # Resources to help
 
