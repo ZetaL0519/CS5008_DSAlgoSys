@@ -11,5 +11,5 @@
 
 1. O(n^2)
 2. O(n^2)
-3. Yes. It needs to store the minimum number for arrays from length 1 to size.
+3. No its space complexity is O(1), so it does not require extra memory.
 4. No it won't change. We still have to go through the list to find minimum and swap numbers.
