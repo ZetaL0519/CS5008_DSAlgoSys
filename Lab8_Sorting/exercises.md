@@ -9,7 +9,7 @@
 
 ## Answers:
 
-1. *edit your answer here for question 1*
-2. *edit your answer here for question 2*
-3. *edit your answer here for question 3*
-4. *edit your answer here for question 4*
+1. O(n^2)
+2. O(n^2)
+3. Yes. It needs to store the minimum number for arrays from length 1 to size.
+4. No it won't change. We still have to go through the list to find minimum and swap numbers.
