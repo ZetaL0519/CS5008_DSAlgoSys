@@ -24,13 +24,14 @@ O(n^2) There are two for-loops in the algorithm.
 
 Do a little research and discover what algorithm qsort is in the C standard library. What is the algorithm? https://en.wikipedia.org/wiki/Qsort
 
-1. *edit your answer here for question 3*
+qsort has a comparator function which takes two arguments and contains logic to decide their relative order in sorted output. 
+It performs like the QuickSort Algorithm.
 
 # Exercise 4
 
 What is the Big-O complexity of 'qsort' that we use in the csort program?
 
-O(nlogn)
+O(nlogn) on average, O(n^2) worst case.
 
 # Exercise 5
 
