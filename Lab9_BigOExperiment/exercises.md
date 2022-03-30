@@ -5,13 +5,13 @@ Please edit this document below with your responses. Each question is worth 1/8 
 1. Record here how long it took you to run bubblesort and csort (Note: If you want to run several trials, say '10' and take an average that is an even better result!).
 
 BubbleSort: 
-real    0m0.378s \n
-user    0m0.373s \n
-sys     0m0.003s \n
+real    0m0.378s 
+user    0m0.373s 
+sys     0m0.003s 
 
 Csort:
-real    0m0.008s \n
-user    0m0.004s \n
+real    0m0.008s 
+user    0m0.004s 
 sys     0m0.004s 
 
 # Exercise 2
