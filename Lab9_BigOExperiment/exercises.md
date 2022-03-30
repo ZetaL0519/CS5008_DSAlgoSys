@@ -43,7 +43,7 @@ Yes it is better.
 List the following functions in terms of their Big-O complexity from **smallest** to **largest**.
 <img src="./media/bigo.jpg"/>
 
-1. *edit your answer here for question 6*
+LogN < N < N^2 < N^3 < 2^N < N!
 
 # Exercise 7
 
