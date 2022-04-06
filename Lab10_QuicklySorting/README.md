@@ -102,7 +102,7 @@ void swapStrings(char** s1, char** s2){
 
 <!--**Answer the following with your partner:**--> **Answer the following here**: How do you think the strcmp function is implemented? i.e. What would your algorithm be in a sentence or two?
 
-Answer: I think the strcmp function is implemented by comparing each letter in the two strings at the same index from index 0. If the letter comes first in the ASCII table, then 
+Answer: I think the strcmp function is implemented by comparing each letter's ASCII code in the two strings at the same index from index 0. If the letter comes first in the ASCII table, then the string with the letter is smaller. For example, "apple" and "Apple", "a" has larger ASCII code than "A". So "apple" > "Apple".
 
 # Part 3 - Quick sort
 
