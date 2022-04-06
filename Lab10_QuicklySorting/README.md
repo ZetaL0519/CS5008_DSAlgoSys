@@ -77,6 +77,8 @@ The data we are working with is 'text' data which consists of a song name. This 
 
 <!--**With your partner:**--> **Take a moment** to observe the chart above. What do you notice about the alphabetical ordering of each letter and their values? They look sorted to me! But what about upper-case and lower-case letters?
 
+Upper-case letters come before lower-case letters.
+
 In order to make our problem slightly easier we have 'cleaned' our data by making every song starts with a lower case letter to make sorting our data easier (Note however there are duplicates!).  The handy function [strcmp](http://www.cplusplus.com/reference/cstring/strcmp/) can be used to tell us which of the c-strings should come first.
 
 ```c
@@ -100,7 +102,7 @@ void swapStrings(char** s1, char** s2){
 
 <!--**Answer the following with your partner:**--> **Answer the following here**: How do you think the strcmp function is implemented? i.e. What would your algorithm be in a sentence or two?
 
-*edit your answer here*
+Answer: I think the strcmp function is implemented by comparing each letter in the two strings at the same index from index 0. If the letter comes first in the ASCII table, then 
 
 # Part 3 - Quick sort
 
