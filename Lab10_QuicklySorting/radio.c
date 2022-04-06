@@ -49,7 +49,22 @@ void bruteForceSort(char** array, unsigned int start, unsigned int end){
 // @Brief   Helper funcion for quicksort
 //          char** can be acquired form musicDB_t->database
 int partition(char** array, unsigned int low, unsigned int high){
-    // TODO:
+    char** pivot = &array[high];
+    int start = low, end = high - 1;
+    while (start <= end){
+      if (strcmp(array[start], *pivot) <= 0){
+        start ++;
+      }
+      else if (strcmp(array[end], *pivot) > 0){
+        end --;
+      } else {
+        swapStrings(&array[start], &array[end]);]]111112111111
+        start ++;
+        end --;
+      }
+    }
+    swapStrings(&array[start], &array[end]);
+    return start;
 }
 
 // @Name    quicksort 
@@ -57,6 +72,13 @@ int partition(char** array, unsigned int low, unsigned int high){
 //          char** can be acquired form musicDB_t->database
 void quicksort(char** array, unsigned int low, unsigned int high){
     // TODO:
+    if (low >= high){
+      return;
+    }
+
+    int pivot = partition(array, low, high);
+    quicksort(array, low, pivot - 1);
+    quicksort(array, pivot + 1, high);
 }
 
 
