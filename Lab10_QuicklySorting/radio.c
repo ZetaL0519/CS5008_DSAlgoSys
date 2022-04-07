@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
+#include <time.h>./radio
 
 // Look in the music.h file to see
 // the structure of the music database.
@@ -58,7 +58,7 @@ int partition(char** array, unsigned int low, unsigned int high){
       else if (strcmp(array[end], *pivot) > 0){
         end --;
       } else {
-        swapStrings(&array[start], &array[end]);]]111112111111
+        swapStrings(&array[start], &array[end]);
         start ++;
         end --;
       }
@@ -72,13 +72,13 @@ int partition(char** array, unsigned int low, unsigned int high){
 //          char** can be acquired form musicDB_t->database
 void quicksort(char** array, unsigned int low, unsigned int high){
     // TODO:
-    if (low >= high){
+    if (low >= high - 1){
       return;
     }
 
-    int pivot = partition(array, low, high);
+    int pivot = partition(array, low, high - 1);
     quicksort(array, low, pivot - 1);
-    quicksort(array, pivot + 1, high);
+    quicksort(array, pivot + 1, high - 1);
 }
 
 
