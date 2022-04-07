@@ -119,7 +119,7 @@ int main(){
  
   // check correctness
   // by printing out the first few items
-  const int items = 20; // change this to up to 13593
+  const int items = 13593; // change this to up to 13593
   printf("O(N*N) sort produces\n"); 
   musicDB_printDatabase(musicDatabase1,0,items);
   printf("\n quick sort produces\n"); 
