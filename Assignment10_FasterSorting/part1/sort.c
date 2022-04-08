@@ -10,10 +10,59 @@
 // Second subarray is arr[m+1..r] 
 void merge(int arr[], int l, int m, int r) {
   //TODO: implement merge.
+  int i, j, k;
+  int left = m - l + 1;
+  int right = r - m;
+
+  int L[left];
+  int R[right];
+
+  for (i = 0; i < left; i ++) {
+    L[i] = arr[l + i];
+  }
+
+  for (j = 0; j < right; j ++){
+    R[j] = arr[m + 1 + j];
+  }
+  k = l;
+  while (i < left && j < right) {
+    if (L[i] < R[j]) {
+      arr[k] = L[i];
+      i ++;
+    }
+    else {
+      arr[k] = R[j];
+      j ++;
+    }
+    k ++;
+  }
+
+  while (i < left) {
+    arr[k] = L[i];
+    i ++;
+    k ++;
+  }
+
+  while (j < right) {
+    arr[k] = R[j];
+    j ++;
+    k ++;
+  }
+  
 }
 
 // Implement your mergeSort function here
 // TODO:
+void mergeSort(int array[], int l, int r) {
+  if (l < r) {
+    int m = (l + r) / 2;
+    mergeSort(array, l, m);
+    mergeSort(array, m + 1, r);
+
+    merge(array, l, m, r);
+  }
+}
+
 
 // Provided below is a sort function. We have also
 // provided a template for how to document functions
@@ -25,7 +74,7 @@ void merge(int arr[], int l, int m, int r) {
 //          (2) 'size' tells us how big the array of data is we are sorting.
 // Output: No value is returned, but 'array' should be modified to store a sorted array of numbers.
 void sortIntegers(int* array, unsigned int size){
-    // TODO: make a call to your mergeSort function here
+    mergeSort(array, 0, size - 1);
 }
 
 
