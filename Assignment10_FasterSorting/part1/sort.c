@@ -24,6 +24,8 @@ void merge(int arr[], int l, int m, int r) {
   for (j = 0; j < right; j ++){
     R[j] = arr[m + 1 + j];
   }
+  i = 0;
+  j = 0;
   k = l;
   while (i < left && j < right) {
     if (L[i] < R[j]) {

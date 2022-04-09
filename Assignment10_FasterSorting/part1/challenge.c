@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Modify this function
-void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n){
+void merge(int* nums1, int m, int* nums2, int n){
 	if (m == 0) {
 		nums1 = nums2;
 		return;
@@ -16,11 +16,30 @@ void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n){
 
 	int p1 = 0, p2 = 0;
 	int p;
-
+	for (p = 0; p < m + n; p ++){
+		if (p2 >= n || p1 < m && nums3[p1] < nums2[p2]){
+			nums1[p] = nums3[p1 ++];
+		} else {
+			nums1[p] = nums2[p2 ++];
+		}
+	}
 }
 
-int main(int argc, char** argv){
 
-  
+void printArray(int* array, unsigned int size){
+	unsigned int i;
+	for (i = 0; i < size; i ++){
+		printf("%d", array[i]);
+	}
+	printf("\n");
+}
+
+int main(){
+	int nums1[] = {1,2,3,0,0,0};
+	int nums2[] = {2,5,6};
+
+	merge(nums1, 3, nums2, 3);
+	
+	printArray(nums1, 6);
 	return 0;  
 }
