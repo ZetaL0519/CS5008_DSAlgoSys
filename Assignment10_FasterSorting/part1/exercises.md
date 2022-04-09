@@ -8,19 +8,19 @@
 
 1. Explain: Take a moment and write down the intuition as to what the Big-O (worst-case) complexity of the merge sort algorithm is and why? 
 
-*edit your answer here for Task 2 question 1*
+O(nlogn). Because, first we have to take O(logn) time to divide the array by recursion. Next, in our merge function, there is only one while loop to iterate through the array to merge, which takes O(n) time. Thus, the time complexity in total is O(nlogn).
 
 2. Explain: What do you think the best-case complexity of the merge sort algorithm is and why?
 
-*edit your answer here for Part 2 question 2*
+O(nlogn). The time complexity is the same with the worst case senario. Because it still has to go through the process of dividing and iterate through the array.
 
 3. Does merge sort require any additional storage beyond the original array? If so how much and why? Make sure to answer in regards to Big-O.
 
-*edit your answer here for Part 2 question 3*
+Yes, it does. In the merge method, there are two arrays created to store array information. So if the size of the array is n, then the size of the additional arrays in total is n. So the space complexity is O(n).
 
 4. How much time in Big-O does it take to merge all of the subarrays together? Explain or draw why?
 
-*edit your answer here for Part 2 question 4*
+It taks O(n) to merge all of the subarrays together. Because the algorithm has to iterate through all subarrays to merge, and the size of all subarrays in total is n. So it takes O(n) to iterate through all subarrays.
 
 
 ## Interview Prep (Optional +1% Bonus on assignment)
