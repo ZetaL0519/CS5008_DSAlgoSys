@@ -8,7 +8,7 @@
 
 1. Explain: Take a moment and write down the intuition as to what the Big-O (worst-case) complexity of the merge sort algorithm is and why? 
 
-O(nlogn). Because, first we have to take O(logn) time to divide the array by recursion. Next, in our merge function, there is only one while loop to iterate through the array to merge, which takes O(n) time. Thus, the time complexity in total is O(nlogn).
+O(nlogn). Because, first we have to take O(logn) time to divide the array into subarrays by recursion. Next, in our merge function, the while loop iterates through each of the subarray to merge, since the size of all subarrays together is n, so it takes O(n) to merge. Thus, the time complexity in total is O(nlogn).
 
 2. Explain: What do you think the best-case complexity of the merge sort algorithm is and why?
 
