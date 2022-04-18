@@ -4,22 +4,30 @@
 #include <stdio.h>
 
 // TODO: Implement iterative solution here
-int factorial(int n){
-
-  return 0;
+long long int factorial(int n){
+  long long int res = 1;
+  while (n >= 1) {
+    res = res * n;
+    n = n - 1;
+  }
+  return res;
 };
 
 // TODO: Implement recursive solution here
-int factorial_rec(int n){
+long long int factorial_rec(int n){
 
-  return 0;
+  if (n <= 1) return 1;
+
+  return factorial_rec(n - 1) * n;
+
 }
 
 int main(){
 
+  int calc = 21; 
   // Both of these should print the same result!
-  printf("factorial(10) = %d\n",factorial(10));
-  printf("factorial_rec(10) = %d\n",factorial_rec(10));
+  printf("factorial(%d) = %lld\n",calc, factorial(calc));
+  printf("factorial_rec(%d) = %lld\n",calc, factorial_rec(calc));
 
 
   return 0;
