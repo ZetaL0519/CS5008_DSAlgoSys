@@ -45,6 +45,7 @@ int unitTest2(){
     bst_t * testBST = bst_create();
     bst_add(testBST,78);
     result = bst_find(testBST,78);
+
     bst_free(testBST);    
     return result;
 }
@@ -54,6 +55,7 @@ int unitTest3(){
     int result;
     bst_t * testBST = bst_create();
     bst_add(testBST, 5);
+
     result = bst_sum(testBST);
     bst_free(testBST);   
 
@@ -63,12 +65,74 @@ int unitTest3(){
     return 0;
 }
 
+// test bst_size method.
+int unitTest4() {
+    int result;
+    bst_t * testBST = bst_create();
+    bst_add(testBST, 5);
+    bst_add(testBST, 6);
+    bst_add(testBST, 7);
+    result = bst_size(testBST);
+    bst_free(testBST);   
+
+    if (result == 3) {
+        return 1;
+    }
+    return 0;
+}
+
+// test bst_print method with different orders.
+int unitTest5() {
+    bst_t * testBST = bst_create();
+    bst_add(testBST, 5);
+    bst_add(testBST, 6);
+    bst_add(testBST, 7);
+    // desending order
+    bst_print(testBST, 1);
+    // ascending order
+    bst_print(testBST, 0);
+    bst_free(testBST);   
+    return 1;
+}
+
+// Test bst_sum method of tree with multiple nodes.
+int unitTest6() {
+    int result;
+    bst_t * testBST = bst_create();
+    bst_add(testBST, 5);
+    bst_add(testBST, 6);
+    bst_add(testBST, 7);
+    result = bst_sum(testBST);
+    bst_free(testBST);   
+    if (result == 18) {
+        return 1;
+    }
+    return 0;
+}
+
+// Test bst_find method of tree with multiple nodes.
+int unitTest7(){
+    int result;
+    bst_t * testBST = bst_create();
+    bst_add(testBST, 5);
+    bst_add(testBST, 6);
+    bst_add(testBST, 7);
+    result = bst_find(testBST,6);
+
+    bst_free(testBST);   
+    return result;
+}
+
 
 // TODO: Add more tests here at your discretion
 int (*unitTests[])(int)={
     unitTest1,
     unitTest2,
     unitTest3,
+    unitTest4,
+    unitTest5,
+    unitTest6,
+    unitTest7,
     NULL
 };
 
