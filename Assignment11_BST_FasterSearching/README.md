@@ -1,11 +1,11 @@
 # TODO Please edit the following information in your assignment
 
-- Name:
-- How many hours did it take you to complete this assignment?
-- Did you collaborate with any other students/TAs/Professors?
+- Name: Siyue Li
+- How many hours did it take you to complete this assignment? 4
+- Did you collaborate with any other students/TAs/Professors? No
 - Did you use any external resources? (Cite them below)
-  - tbd
-  - tbd
+  - https://www.geeksforgeeks.org/sum-nodes-binary-tree/
+  - https://stackoverflow.com/questions/9181146/freeing-memory-of-a-binary-tree-c
 - (Optional) What was your favorite part of the assignment?
 - (Optional) How would you improve the assignment?
 
