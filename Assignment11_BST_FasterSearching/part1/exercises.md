@@ -10,11 +10,10 @@ Discuss and answer the following questions (Make sure to elaborate and justify y
 
 ## Answers
 
-1. *edit your answer here*
-2. *edit your answer here*
-3. *edit your answer here*
-4. *edit your answer here*
-
+1. the height of the left and right subtree of any node differ by not more than 1.
+2. O(Log(N)) It is like binary search.
+3. Yes, it is likely that BST exihibits O(n) worst case search time. If all the nodes are aligned on the same line, then it might take O(n) time to find the last node. For example, the root only has left child, and its left child only has one left child and so on.
+4. T(N) = T(N/2) + O(1). Because each node has two children and if the node is the target, then it is O(1).
 
 
 ## Interview Prep (Optional +1% Bonus on assignment)
