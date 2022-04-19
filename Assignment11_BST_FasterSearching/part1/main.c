@@ -74,7 +74,6 @@ int unitTest4() {
     bst_add(testBST, 7);
     result = bst_size(testBST);
     bst_free(testBST);   
-
     if (result == 3) {
         return 1;
     }

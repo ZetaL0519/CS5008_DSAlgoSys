@@ -50,6 +50,7 @@ bstnode_t* bst_addnode(bstnode_t* t, int item){
             t ->rightChild =bst_addnode(t ->rightChild, item);
         }
     }
+    return t;
 }
 // Adds a new node containng item to the BST
 // The item is added in the correct position in the BST.
