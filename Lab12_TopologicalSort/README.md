@@ -150,8 +150,8 @@ Okay, now that you understand the data structure, you will implement two functio
 
 Your answers here:
 
-1. *edit your response*
-2. *edit your response*
+1. O(N^2). Because for N nodes, it takes a matrix of N^2 size to represent all of the relationships.
+2. An adjacency matrix shows how each node in a graph is connected (if at all) to every other node in the graph. By definition, it is a square matrix, so row == columns. If we want to model relationshps between bi-direction of two nodes, then row must be equal.
 
 
 ## Compiling and running the program.
