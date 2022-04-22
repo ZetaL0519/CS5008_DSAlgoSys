@@ -1,2 +1,10 @@
 eat sleep
 eat exercise
+jog by the beach
+call the clinic
+cook eat
+shower dry_hair
+clean cook
+brush teeth 
+play game
+grocery shopping
