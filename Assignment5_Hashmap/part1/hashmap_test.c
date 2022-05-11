@@ -58,7 +58,7 @@ int unitTest3(int status){
     int passed = 0;
     hashmap_t* test = hashmap_create(12);
     hashmap_insert(test,"cow","A common farm animal.");
-    
+
     if(hashmap_hasKey(test, "cow")==1){
       passed = 1;
     }

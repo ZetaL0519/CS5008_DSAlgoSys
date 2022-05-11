@@ -44,5 +44,5 @@ int bst_sum(bst_t *t);
 int bst_find(bst_t * t, int value);
 unsigned int bst_size(bst_t* t);
 void bst_free(bst_t* t);
-
+bstnode_t* new_node(int item);
 #endif

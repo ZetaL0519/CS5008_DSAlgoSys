@@ -9,7 +9,7 @@
 // Input: array - An array of integers
 //        start - Where to start looking in an array
 //        stop - End of where to search. Typically the 'size' of the array.
-// Output: The index in an array of the minimum value between a range [start,stop]
+// Output: The index in an array of the minimum value oii`between a range [start,stop]
 int findMinimum(int* array, int start, int stop){
     // TODO: Iterate through a subset of the array and find the minimum value.
     //       Return the index of that minimum value.
